@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Happy Birthday</title><style>
+body{margin:0;font-family:Arial;background:linear-gradient(#dff4ff,#fff);display:flex;justify-content:center;align-items:center;min-height:100vh;overflow:hidden}
+.card{background:#fff;padding:30px;border-radius:20px;max-width:700px;text-align:center;box-shadow:0 4px 15px #0002}
+h1{color:#2b7de9}.btn{padding:10px 18px;border:none;border-radius:20px;background:#2b7de9;color:#fff}
+.heart{position:fixed;bottom:-30px;animation:f 6s linear forwards}@keyframes f{to{transform:translateY(-110vh);opacity:0}}
+</style></head><body><div class='card'><h1 id='t'>Happy Birthday 💙</h1><h2>Sachinn ❤️</h2><p id='msg'>Countdown running...</p><div id='cd'></div><button class='btn' onclick='preview()'>🎉 Preview Birthday</button></div>
+<script>
+const target=new Date('2026-07-07T00:00:00').getTime();
+setInterval(()=>{let d=target-Date.now();if(d<0){cd.innerHTML='🎂 Happy Birthday!';return;}let D=Math.floor(d/86400000),H=Math.floor(d%86400000/3600000),M=Math.floor(d%3600000/60000),S=Math.floor(d%60000/1000);cd.innerHTML=D+'d '+H+'h '+M+'m '+S+'s';},1000);
+function hearts(){setInterval(()=>{let e=document.createElement('div');e.className='heart';e.innerHTML=['💙','🎈','🎉'][Math.floor(Math.random()*3)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(20+Math.random()*20)+'px';document.body.appendChild(e);setTimeout(()=>e.remove(),6000);},250);}
+function preview(){t.innerHTML='🎉 Happy Birthday Sachinn ❤️';msg.innerHTML='Today is your special day! Wishing you endless happiness, love and success. 💙';cd.innerHTML='🥳 Let the celebration begin!';hearts();}
+</script></body></html>
